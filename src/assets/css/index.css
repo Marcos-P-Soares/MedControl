@@ -4,8 +4,8 @@
   --primaria: #0080ff;
   --secundaria: #c9c9c9;
   --secundaria-clara: #d29c9c;
-  --terciaria: #f2f2f2;
-  --black: #0d0d0d;
+  --terciaria: #ffffff;
+  --black: #000000;
 }
 
 body {
@@ -18,10 +18,19 @@ body {
 main {
   flex: 1;
 }
+/* Adicione o seletor específico para a classe .nav */
+nav.navbar.bg-body-tertiary {
+  padding: 15px !important;
+  background-color: #7fb6edcb !important;
+  border-bottom: 1px solid #000000 !important;
+  color: #d00000 !important; /* Cor do texto */
+}
 
 footer {
-  background-color: #f8f9fa;
-  padding: 20px;
+  background-color: #115498;
+  padding: 2px;
+  text-align: center;
+  border-top: 1px solid #000000;
 }
 .center-box {
   display: flex;
@@ -35,4 +44,45 @@ footer {
   padding: 20px;
   border-radius: 10px;
   background-color: #bbbbbb22;
+  box-shadow: 5px 10px 10px 0px #105685;
+  width: 500px;
+  height: 300px;
+}
+.custom-box .btn-primary:nth-child(1) {
+  color: #000000;
+  background-color: #55caed;
+  border-color: #000000;
+  bottom: 0px;
+  width: 170px;
+  border-radius: 14px;
+  border-bottom-left-radius: 14px;
+  margin-left: 19px;
+  margin-top: 15px;
+  margin-right: 0px;
+}
+
+.custom-box .btn-primary:nth-child(2) {
+  color: #000000;
+  background-color: #55caed;
+  border-color: #000000;
+  bottom: 0px;
+  width: 170px;
+  border-radius: 14px;
+  border-bottom-left-radius: 14px;
+  margin-left: 50px;
+  margin-top: 15px;
+  margin-right: 0px;
+}
+
+.custom-box .btn-primary:nth-child(3) {
+  color: #000000;
+  background-color: #55caed;
+  border-color: #000000;
+  bottom: 0px;
+  width: 170px;
+  border-radius: 14px;
+  border-bottom-left-radius: 14px;
+  margin-left: 130px;
+  margin-top: 20px;
+  margin-right: 0px;
 }
