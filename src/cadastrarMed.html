@@ -28,31 +28,75 @@
     </header>
     <main>
       <div class="container text-center titulo">
-        <p class="h1">MEDCONTROL</p>
-        <p class="h4">Controle de medicamentos</p>
+        <p class="h1">Cadastrar Medicamento</p>
       </div>
       <div class="container-fluid center-box">
         <section class="custom-box">
-          <label for="nomeAluno">Nome:</label>
-          <input type="text" name="nome" required />
+          <div class="column">
+            <label for="nomeAluno" class="campo-label-nome">Nome:</label>
+            <br />
+            <input type="text" name="nome" class="campo-input-nome" required />
 
-          <label for="formFarmaceutica">Form Farmacêutica:</label>
-          <input type="text" name="formFarmaceutica" required />
+            <label for="formFarmaceutica" class="campo-label-farmaceutica"
+              >Form Farmacêutica:</label
+            >
+            <br />
+            <input
+              type="text"
+              name="formFarmaceutica"
+              class="campo-input-farmaceutica"
+              required
+            />
 
-          <label for="frequencia">Frequência de Administração:</label>
-          <input type="text" name="frequencia" required />
+            <label for="frequencia" class="campo-label-frequencia"
+              >Frequência de Administração:</label
+            >
+            <br />
+            <input
+              type="text"
+              name="frequencia"
+              class="campo-input-frequencia"
+              required
+            />
+          </div>
 
-          <label for="instrucoes">Instruções Especiais:</label>
-          <input type="text" name="instrucoes" required />
+          <div class="column">
+            <label for="instrucoes" class="campo-label-instrucoes"
+              >Instruções Especiais:</label
+            >
+            <br />
+            <input
+              type="text"
+              name="instrucoes"
+              class="campo-input-instrucoes"
+              required
+            />
 
-          <label for="dosagem">Dosagem:</label>
-          <input type="text" name="dosagem" required />
+            <label for="dosagem" class="campo-label-dosagem">Dosagem:</label>
+            <br />
+            <input
+              type="text"
+              name="dosagem"
+              class="campo-input-dosagem"
+              required
+            />
 
-          <label for="contatoMedico">Contato do Médico:</label>
-          <input type="text" name="contatoMedico" required />
+            <label for="contatoMedico" class="campo-label-contato"
+              >Contato do Médico:</label
+            >
+            <br />
+            <input
+              type="text"
+              name="contatoMedico"
+              class="campo-input-contato"
+              required
+            />
+          </div>
         </section>
       </div>
+      <button type="button" class="btn btn-primary">Cadastrar
     </main>
+
     <footer class="bg-body-tertiary text-center text-lg-start">
       <div
         class="text-center p-3"

@@ -56,41 +56,80 @@ footer {
   justify-content: center;
   align-items: center;
   height: 100%;
-  margin-top: 150px;
+  margin-top: 35px;
 }
 .custom-box {
-  border: 1px solid #5486e2;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #bbbbbb22;
-  box-shadow: 5px 10px 10px 0px #105685;
-  width: 1200px;
-  height: 350px;
-  margin-top: -100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Duas colunas com largura igual */
+  gap: 100px; /* Espaço entre as colunas */
+  width: 70%;
+  margin: 0 auto;
+}
+
+.column {
   display: flex;
   flex-direction: column;
+}
+.campo-label-nome,
+.campo-label-farmaceutica,
+.campo-label-frequencia,
+.campo-label-instrucoes,
+.campo-label-dosagem,
+.campo-label-contato {
+  font-weight: bold;
+  margin-top: 5px;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -10px;
+  margin-left: 50px;
 }
 
-.custom-box label {
-  margin-bottom: 4px;
+/* Adicione estilos adicionais conforme necessário */
+
+.campo-label-nome label,
+.campo-label-farmaceutica label,
+.campo-label-frequencia label,
+.campo-label-instrucoes label,
+.campo-label-dosagem label,
+.campo-label-contato label {
+  margin-right: 1px;
+}
+.campo-input-nome,
+.campo-input-farmaceutica,
+.campo-input-frequencia,
+.campo-input-instrucoes,
+.campo-input-dosagem,
+.campo-input-contato {
+  width: 300px; /* Ajuste a largura conforme necessário */
+  height: 30px; /* Ajuste a altura conforme necessário */
+  margin-left: 50px;
+  background-color: #a6c2e1;
 }
 
-.custom-box input {
-  width: 100%;
-  padding: 1px;
-  margin-bottom: 5px;
-  box-sizing: border-box;
+/* Adicione estilos ao botão conforme necessário */
+.btn-primary {
+  width: 150px; /* Ajuste a largura conforme necessário */
+  height: 50px;
+  background-color: #40556c; /* Cor de fundo */
+  color: #fff; /* Cor do texto */
+  border: none; /* Sem borda */
+  padding: 10px 20px; /* Preenchimento */
+  font-size: 16px; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor ao passar o mouse */
+  border-radius: 11px; /* Borda arredondada */
+  margin-top: 55px;
+  margin-left: 600px;
 }
-.custom-box .btn-primary:nth-child(1) {
-  color: #000000;
-  background-color: #55caed;
-  border-color: #000000;
-  bottom: 0px;
-  width: 170px;
-  border-radius: 14px;
-  border-bottom-left-radius: 14px;
-  margin-left: 19px;
-  margin-top: 15px;
-  margin-right: 0px;
+
+/* Estilo quando o mouse passa sobre o botão */
+.btn-primary:hover {
+  background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo quando o botão é pressionado */
+.btn-primary:active {
+  background-color: #0056b3; /* Cor de fundo ao pressionar o botão */
+  transform: translateY(1px); /* Efeito de levantamento ao pressionar */
 }
