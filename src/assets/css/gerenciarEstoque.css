@@ -81,7 +81,22 @@ footer {
   .table td:nth-child(2) {
     width: 100px;
   }
-  
+
+  /* Botão editar da tabela */
+  .cell-with-button {
+    position: relative;
+  }
+
+  .editar-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    margin-right: 8px;
+    cursor: pointer;
+  }
+
   @media (max-width: 767.98px) {
     .table td:nth-child(2) {
       width: auto;
