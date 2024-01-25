@@ -19,19 +19,58 @@
     <style>
       .date-bar {
         display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
       }
 
       .date {
         padding: 10px;
-        border: 1px solid #ccc;
+        border: 1px solid #4a90d6;
         cursor: pointer;
+        margin: 0 5px;
+        transition: color 0.3s ease;
+        background-color: #828282;
+        color: white;
       }
 
-      .date.active {
-        background-color: yellow;
+      .date:hover {
+        color: yellow;
       }
+
+      .date.active:hover {
+        color: rgb(255, 255, 255);
+      }
+      .date.clicked {
+        color: yellow;
+      }
+
+      .arrow {
+        cursor: pointer;
+        font-size: 40px;
+      }
+      .carousel-title {
+        margin-top: 20px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+      }
+      .campo-input-nome {
+  width: 300px; 
+  height: 30px; 
+  margin-left: 50px;
+  background-color: #a6c2e1;
+}
+.campo-label-nome{
+  font-weight: bold;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -10px;
+  margin-left: 50px;
+}
     </style>
     <title>MEDCONTROL</title>
   </head>
@@ -49,14 +88,31 @@
         <p class="h1">Histórico de Administração</p>
       </div>
 
-      <!-- Barra de Datas -->
-      <div class="date-bar" id="dateBar">
-        <div class="date" onclick="highlightDate(0)">20/01/24</div>
-        <div class="date" onclick="highlightDate(1)">21/01/24</div>
-        <div class="date" onclick="highlightDate(2)">22/01/24</div>
-        <div class="date" onclick="highlightDate(3)">23/01/24</div>
-        <div class="date" onclick="highlightDate(4)">24/01/24</div>
+      <div class="date-bar">
+        <div class="arrow" onclick="prevDate()">&#8249;</div>
+
+        <div class="date-bar" id="dateBar">
+          <div class="date" onclick="highlightDate(0)">22/01/24</div>
+          <div class="date" onclick="highlightDate(1)">23/01/24</div>
+          <div class="date" onclick="highlightDate(2)">24/01/24</div>
+          <div class="date" onclick="highlightDate(3)">25/01/24</div>
+          <div class="date" onclick="highlightDate(4)">26/01/24</div>
+          <div class="date" onclick="highlightDate(5)">27/01/24</div>
+        </div>
+
+        <div class="arrow" onclick="nextDate()">&#8250;</div>
       </div>
+      <section>
+        <div class="container text-center carousel-title">
+          <p class="h4">Lista de Medicamentos Diária</p>
+        </div>
+      </section>
+      <section class="custom-box">
+        <div class="column">
+          <label for="nomeAluno" class="campo-label-nome">Nome:</label>
+          <br />
+          <input type="text" name="nome" class="campo-input-nome" required />
+
     </main>
 
     <footer class="bg-body-tertiary text-center text-lg-start">
@@ -67,7 +123,6 @@
         © 2020 Copyright:
         <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
       </div>
-      <!-- Copyright -->
     </footer>
 
     <script
@@ -76,22 +131,28 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      let currentDateIndex = 0; // Índice da data atual
+      let currentDateIndex = 0;
 
       function highlightDate(index) {
-        // Remove a classe "active" da data atual
-        document.querySelector(".date.active").classList.remove("active");
+        if (currentDateIndex !== null) {
+          document
+            .querySelectorAll(".date")
+            [currentDateIndex].classList.remove("clicked");
+        }
 
-        // Adiciona a classe "active" à nova data
-        document.querySelectorAll(".date")[index].classList.add("active");
-
-        currentDateIndex = index; // Atualiza o índice da data atual
+        document.querySelectorAll(".date")[index].classList.add("clicked");
+        currentDateIndex = index;
       }
 
-      // Exemplo de mudança para a próxima data ao clicar em "Próximo"
       function nextDate() {
         if (currentDateIndex < 4) {
           highlightDate(currentDateIndex + 1);
+        }
+      }
+
+      function prevDate() {
+        if (currentDateIndex > 0) {
+          highlightDate(currentDateIndex - 1);
         }
       }
     </script>
