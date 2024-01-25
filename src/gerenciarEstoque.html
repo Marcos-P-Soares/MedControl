@@ -9,6 +9,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <script src="./assets/js/gerenciarEstoque.js"></script>
     <link rel="stylesheet" href="../src/assets/css/gerenciarEstoque.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,28 +43,6 @@
       <tbody id="tabela-body"></tbody>
     </table>
   </body>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Obtenha os medicamentos salvos do localStorage
-      const medicamentosSalvos = JSON.parse(localStorage.getItem('medicamentos')) || [];
-  
-      // Obtenha a tabela
-      const tabelaBody = document.getElementById('tabela-body');
-  
-      // Preencha a tabela com os medicamentos salvos
-      medicamentosSalvos.forEach((medicamento) => {
-        const row = `
-          <tr>
-            <td>${medicamento.nome}</td>
-            <td>${medicamento.quantidade}</td>
-          </tr>
-        `;
-        tabelaBody.innerHTML += row;
-      });
-    });
-  </script>
-  
 
   <footer class="bg-body-tertiary text-center text-lg-start">
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05)">
