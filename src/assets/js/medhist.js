@@ -7,7 +7,6 @@ function adicionarMedicamento() {
 
     // Se o usuário escolheu um medicamento
     if (selecionado) {
-        // Criar o objeto de medicamento com base no selecionado
         const medicamentoSelecionado = medicamentosSalvos.find(med => med.nome === selecionado);
 
         // Adicionar o medicamento à tabela
@@ -45,6 +44,9 @@ function adicionarMedicamento() {
         const listaMedicamentos = JSON.parse(localStorage.getItem('medicamentosHist')) || [];
         listaMedicamentos.push(medicamentoSelecionado);
         localStorage.setItem('medicamentosHist', JSON.stringify(listaMedicamentos));
+
+        // Redirecionar para infoMed.html com os parâmetros do medicamento
+        mostrarInformacoes(medicamentoSelecionado.nome);
     }
 
     // Exibir medicamentos salvos ao recarregar a página
@@ -104,8 +106,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Função para mostrar informações do medicamento
 function mostrarInformacoes(nomeMedicamento) {
-    // Construa a URL com parâmetros
     const url = `infoMed.html?nome=${encodeURIComponent(nomeMedicamento)}`;
-    // Redirecione para infoMed.html
     window.location.href = url;
 }

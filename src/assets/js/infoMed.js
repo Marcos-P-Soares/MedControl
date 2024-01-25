@@ -1,19 +1,43 @@
 document.addEventListener('DOMContentLoaded', function () {
-        // Obter parâmetros da URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const nomeMedicamento = urlParams.get('medicamento');
+    // Função para obter parâmetros da URL
+    function obterParametroURL(nomeParametro) {
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        return urlSearchParams.get(nomeParametro);
+    }
 
-        // TODO: Obter os dados do medicamento com base no nome
+    // Obtenha o nome do medicamento da URL
+    const nomeMedicamento = obterParametroURL('nome');
 
-        // Exibir os dados na página
-        // Substitua as linhas abaixo pelos dados reais do medicamento
-        const container = document.querySelector('.container.titulo');
-        container.innerHTML = `
-            <p class="h1">Informações do Medicamento</p>
-            <p>Nome: ${nomeMedicamento}</p>
-            <p>Dosagem: ...</p>
-            <p>Instruções Especiais: ...</p>
-            <p>Situação: ...</p>
-            <p>Contato do Médico: ...</p>
-        `;
-    });
+    // Recupere os dados do medicamento do local storage
+    const medicamento = obterDadosMedicamento(nomeMedicamento);
+
+    // Preencha os campos com os dados do medicamento
+    document.getElementById('nomeMedicamento').textContent = medicamento.nome || 'N/A';
+    document.getElementById('dosagem').textContent = medicamento.dosagem || 'N/A';
+    document.getElementById('instrucoes').textContent = medicamento.instrucoes || 'N/A';
+    document.getElementById('contatoMedico').textContent = medicamento.contatoMedico || 'N/A';
+});
+
+// Função para obter dados do medicamento do local storage
+function obterDadosMedicamento(nomeMedicamento) {
+    const listaMedicamentos = JSON.parse(localStorage.getItem('medicamentosHist')) || [];
+    return listaMedicamentos.find(med => med.nome === nomeMedicamento) || {};
+}
+
+// Função para obter a situação do medicamento
+function obterSituacaoMedicamento() {
+    // Obter o elemento select
+    const selectSituacao = document.getElementById('situacaoMedicamento');
+
+    // Obter a opção selecionada
+    const opcaoSelecionada = selectSituacao.options[selectSituacao.selectedIndex];
+
+    // Retornar o valor da opção selecionada (pode ser 'tomado' ou 'nao-tomado')
+    return opcaoSelecionada ? opcaoSelecionada.value : null;
+}
+
+// Função para obter dados do medicamento do local storage
+function obterDadosMedicamento(nomeMedicamento) {
+    const medicamentosSalvos = JSON.parse(localStorage.getItem('medicamentos')) || [];
+    return medicamentosSalvos.find(med => med.nome === nomeMedicamento) || {};
+}
