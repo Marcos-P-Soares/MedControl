@@ -9,6 +9,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <script src="./assets/js/medhist.js"></script>
     <link rel="stylesheet" href="../src/assets/css/medHist.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -108,11 +109,20 @@
         </div>
       </section>
       <section class="custom-box">
-        <div class="column">
-          <label for="nomeAluno" class="campo-label-nome">Nome:</label>
-          <br />
-          <input type="text" name="nome" class="campo-input-nome" required />
-
+        <button class="campo-input-nome" onclick="adicionarMedicamento()">Adicionar Medicamento</button>
+  
+        <!-- Tabela para mostrar os medicamentos adicionados -->
+        <table class="table table-bordered" id="medicamentosTable">
+          <thead>
+            <tr>
+              <th>Nome do Medicamento</th>
+              <th>Situação</th>
+              <th>Informações</th>
+            </tr>
+          </thead>
+          <tbody id="medicamentosBody"></tbody>
+        </table>
+      </section>
     </main>
 
     <footer class="bg-body-tertiary text-center text-lg-start">
