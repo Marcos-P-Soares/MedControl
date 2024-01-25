@@ -51,3 +51,47 @@ footer {
   text-align: center;
   border-top: 1px solid #000000;
 }
+
+main div {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+main div p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.table {
+  table-layout: fixed;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+.table th {
+  background-color: #546671;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+
+.table td {
+  vertical-align: middle;
+  text-align: center;
+  background-color: #BFB7B7;
+}
+
+.table td:first-child {
+  text-align: center;
+  padding-left: 10px;
+}
+
+.table td:nth-child(2) {
+  width: 100px;
+}
