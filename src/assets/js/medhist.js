@@ -74,6 +74,7 @@ function exibirMedicamentosSalvos() {
                 <td></td>
                 <td>
                     <button onclick="mostrarInformacoes('${medicamento.nome}')">Informações</button>
+                    <button onclick="excluirMedicamentoHist('${medicamento.nome}')">Excluir</button>
                 </td>
             </tr>
         `;
@@ -105,4 +106,18 @@ document.addEventListener('DOMContentLoaded', function () {
 function mostrarInformacoes(nomeMedicamento) {
     const url = `infoMed.html?nome=${encodeURIComponent(nomeMedicamento)}`;
     window.location.href = url;
+}
+
+// Função para excluir medicamento do histórico
+function excluirMedicamentoHist(nomeMedicamento) {
+    const confirmacao = confirm(`Tem certeza que deseja excluir o medicamento ${nomeMedicamento} do histórico?`);
+
+    if (confirmacao) {
+        const listaMedicamentos = JSON.parse(localStorage.getItem('medicamentosHist')) || [];
+        const novoHistorico = listaMedicamentos.filter(med => med.nome !== nomeMedicamento);
+        localStorage.setItem('medicamentosHist', JSON.stringify(novoHistorico));
+
+        // Atualizar a tabela após a exclusão
+        exibirMedicamentosSalvos();
+    }
 }
