@@ -44,9 +44,6 @@ function adicionarMedicamento() {
         const listaMedicamentos = JSON.parse(localStorage.getItem('medicamentosHist')) || [];
         listaMedicamentos.push(medicamentoSelecionado);
         localStorage.setItem('medicamentosHist', JSON.stringify(listaMedicamentos));
-
-        // Redirecionar para infoMed.html com os parâmetros do medicamento
-        mostrarInformacoes(medicamentoSelecionado.nome);
     }
 
     // Exibir medicamentos salvos ao recarregar a página

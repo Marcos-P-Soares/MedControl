@@ -37,7 +37,6 @@ function atualizarMedicamento() {
     const formFarmaceutica = document.getElementById('formFarmaceutica').value;
     const frequencia = document.getElementById('frequencia').value;
     const instrucoes = document.getElementById('instrucoes').value;
-    const dosagem = document.getElementById('dosagem').value;
     const contatoMedico = document.getElementById('contatoMedico').value;
 
     // Atualizar os dados do medicamento no local storage
