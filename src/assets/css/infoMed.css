@@ -20,6 +20,7 @@ main {
 }
 
 nav.navbar.bg-body-tertiary {
+  justify-content: center;
   padding: 15px !important;
   background-color: #7fb6edcb !important;
   border-bottom: 1px solid #000000 !important;
@@ -118,4 +119,17 @@ main div p {
 .btn-primary:active {
   background-color: #0056b3;
   transform: translateY(1px);
+}
+
+.botao{
+  background-color: rgb(23, 114, 252);
+  border: 3px solid rgb(5, 6, 7);
+  color: #fff;
+  padding: 10px 20px;
+  max-width: fit-content;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  margin: 5px;
 }
