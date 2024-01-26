@@ -16,6 +16,12 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('dosagem').textContent = medicamento.dosagem || 'N/A';
     document.getElementById('instrucoes').textContent = medicamento.instrucoes || 'N/A';
     document.getElementById('contatoMedico').textContent = medicamento.contatoMedico || 'N/A';
+
+    // Adicione evento de clique ao botão "Editar Medicamento"
+    const btnEditarMedicamento = document.getElementById('btnEditarMedicamento');
+    btnEditarMedicamento.addEventListener('click', function () {
+        window.location.href = 'editarMed.html?nome=' + encodeURIComponent(nomeMedicamento);
+    });
 });
 
 // Função para obter dados do medicamento do local storage

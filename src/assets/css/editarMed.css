@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,700&display=swap");
+
+:root {
+  --primaria: #0080ff;
+  --secundaria: #c9c9c9;
+  --secundaria-clara: #d29c9c;
+  --terciaria: #ffffff;
+  --black: #000000;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
+nav.navbar.bg-body-tertiary {
+  padding: 15px !important;
+  background-color: #7fb6edcb !important;
+  border-bottom: 1px solid #000000 !important;
+  color: #d00000 !important; /* Cor do texto */
+}
+.container.titulo {
+  padding: 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #5c5c5c;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.container.titulo p {
+  margin-bottom: 10px;
+}
+
+.container.titulo .h1 {
+  color: #007bff;
+}
+
+.container.titulo .h4 {
+  color: #555;
+}
+
+footer {
+  background-color: #115498;
+  padding: 2px;
+  text-align: center;
+  border-top: 1px solid #000000;
+}
+.center-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 35px;
+}
+.custom-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Duas colunas com largura igual */
+  gap: 100px; /* Espaço entre as colunas */
+  width: 70%;
+  margin: 0 auto;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.campo-label-nome,
+.campo-label-farmaceutica,
+.campo-label-frequencia,
+.campo-label-instrucoes,
+.campo-label-dosagem,
+.campo-label-contato {
+  font-weight: bold;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -10px;
+  margin-left: 50px;
+}
+
+/* Adicione estilos adicionais conforme necessário */
+
+.campo-label-nome label,
+.campo-label-farmaceutica label,
+.campo-label-frequencia label,
+.campo-label-instrucoes label,
+.campo-label-dosagem label,
+.campo-label-contato label {
+  margin-right: 1px;
+}
+.campo-input-nome,
+.campo-input-farmaceutica,
+.campo-input-frequencia,
+.campo-input-instrucoes,
+.campo-input-dosagem,
+.campo-input-contato {
+  width: 300px; /* Ajuste a largura conforme necessário */
+  height: 30px; /* Ajuste a altura conforme necessário */
+  margin-left: 50px;
+  background-color: #a6c2e1;
+}
+
+/* Adicione estilos ao botão conforme necessário */
+.btn-primary {
+  width: 150px; /* Ajuste a largura conforme necessário */
+  height: 50px;
+  background-color: #40556c; /* Cor de fundo */
+  color: #fff; /* Cor do texto */
+  border: none; /* Sem borda */
+  padding: 10px 20px; /* Preenchimento */
+  font-size: 16px; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor ao passar o mouse */
+  border-radius: 11px; /* Borda arredondada */
+  margin-top: 55px;
+  margin-left: 700px;
+}
+
+/* Estilo quando o mouse passa sobre o botão */
+.btn-primary:hover {
+  background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo quando o botão é pressionado */
+.btn-primary:active {
+  background-color: #0056b3; /* Cor de fundo ao pressionar o botão */
+  transform: translateY(1px); /* Efeito de levantamento ao pressionar */
+}
